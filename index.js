@@ -34,10 +34,22 @@ getPeople();
 const getYoda = () => { 
     axios({
         method: 'get', 
-        url: 'https://swapi.co/api/people/'   
+        baseURL: `https://swapi.co/api/people/`
     })
-    .then((data) => {
-        console.log(data);
+    .then((response) => {
+        const dataCharacters = response.data.results;
+        const result = dataCharacters.filter(dataCharacter => dataCharacter.name)
+        // const filter = results.filter(result => results.id.name = "Yoda")
+        console.log(result);
+        if (result == "Yoda") {
+            console.log("success")
+            
+        } else {
+            for(let i = 0; i < 10; i++){
+                let url = `https://swapi.co/api/people/` + i;
+            }
+            return url;   
+        }
     })
     .catch((error) => {
         console.log(error)
@@ -45,6 +57,6 @@ const getYoda = () => {
 }
 
 // La requete que renvoie un tableau d'objet, les personnages se trouvent dans data: 
-// Pour cela, je dois appeler data pour récupérer le name == "Yoda"
+// 
 
 
