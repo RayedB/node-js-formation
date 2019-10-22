@@ -41,14 +41,14 @@ const getYoda = () => {
         const result = dataCharacters.filter(dataCharacter => dataCharacter.name)
         // const filter = results.filter(result => results.id.name = "Yoda")
         console.log(result);
-        if (result == "Yoda") {
-            console.log("success")
-            
-        } else {
-            for(let i = 0; i < 10; i++){
-                let url = `https://swapi.co/api/people/` + i;
+        for(let i = 0; i < 10; i++){
+            let url = `https://swapi.co/api/people/?page=` + i;
+            if (result == "Yoda") {
+                console.log("success")
+                
+            } else {
+                console.log("failure")
             }
-            return url;   
         }
     })
     .catch((error) => {
