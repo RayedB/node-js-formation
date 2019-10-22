@@ -1,32 +1,50 @@
 "use strict"
 
+
 // CONSIGNE
 // Créer une fonction qui appelle l'API de Swapi 
 // Elle retourne Yoda 
 
 
-// Je teste la récupération des personnages 
-function getPeople() {
-    return fetch("https://swapi.co/api/people/")
-    .then(res => res.json())
-    .then(people => console.log(people))
+// // Je teste la récupération des personnages (avec fetch())
+// function getPeople() {
+//     return fetch("https://swapi.co/api/people/")
+//     .then(res => res.json())
+//     .then(people => console.log(people.results))
+// }
+// getPeople(); // OK
+
+/////////// TEST //////////////
+// AXIOS : récupération de l'objet People
+const getPeople = () => {
+    axios.get('https://swapi.co/api/people/')
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
 }
-getPeople(); // OK
+getPeople();
+/////////// TEST //////////////
 
 
-// On veut chercher Yoda 
+// Essai avec autre syntaxe
 
-function getYoda (array, data){
-    
-    fetch("https://swapi.co/api/people/" + i + "/")
+const getYoda = () => { 
+    axios({
+        method: 'get', 
+        url: 'https://swapi.co/api/people/'   
+    })
     .then((data) => {
-        return data.json()
-    }).then((json) => {
-        json.filter(json.name === "Yoda");
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error)
     })
 }
 
-// ça fonctionne, maintenant, on va 
-
+// La requete que renvoie un tableau d'objet, les personnages se trouvent dans data: 
+// Pour cela, je dois appeler data pour récupérer le name == "Yoda"
 
 
