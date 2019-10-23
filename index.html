@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
     <title>Appel API</title>
 </head>
 <body>
-    <input type="button" value="Yoda, tu appelleras" onclick="getYoda()" />
-    <p class="yoda">La force par le bien, tu atteindras</p>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="index.js"></script>
+    <input type="button" value="Yoda, tu invoqueras" onclick="getYoda()"/><br><br>
+    Mon personnage: <input type="text" id="characterName"><br><br>
+    <input type="button" value="Ton personnage, tu appelleras" onclick="getCharacter()"/><br><br>
+    <span id="characterDesc"></span>
 </body>
 </html>
