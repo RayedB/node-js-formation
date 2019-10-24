@@ -9,9 +9,37 @@
     <title>Appel API</title>
 </head>
 <body>
+    <!-- Exercice 1 : appeller l'API de SWAPI et retourner Yoda -->
+    <h3>Exercice 1 : appeller l'API de SWAPI et retourner Yoda</h3>
     <input type="button" value="Yoda, tu invoqueras" onclick="getYoda()"/><br><br>
+    <span style="color: red;" id="yoda"></span>
+    
+    <!-- Exercice 2 : retourner le nom de chaque espèce qui contient au moins 2 personnages -->
+    <h3>Exercice 2 : retourner le nom de chaque espèce qui contient au moins 2 personnages</h3>
+    <input type="button" value="Espèce qui contient au moins 2 personnages" onclick="getSpecies()"/><br><br>
+    <span style="color: red;" id="species"></span>
+
+    <!-- Exercice 3 : retourner la somme des tailles de tous les humains -->
+    <h3>Exercice 3 : retourner la somme des tailles de tous les humains</h3>
+    <input type="button" value="Somme des tailles de tous les humains" onclick="getSizeHumans()"/><br><br>
+    <span style="color: red;" id="size"></span>
+
+    <!-- Exercice 4 : retourne un tableau de tous les tous les humains -->
+    <h3>Exercice 4 : retourne un tableau de tous les tous les humains contenant : </h3>
+    <ul>
+        <li>le nom</li>
+        <li>la taille</li>
+        <li>le poids</li>
+        <li>le nom des films dans lesquels ils sont apparus</li>
+        <li>le nom de leur planète d'origine</li>
+    </ul>
+    <input type="button" value="tableau des humains" onclick="getSizeHumans()"/><br><br>
+    <div class="humans"></div>
+
+    <h3>Bonus perso : permettre au user de retrouver les caractéristiques de son perso favoris </h3>
     Mon personnage: <input type="text" id="characterName"><br><br>
     <input type="button" value="Ton personnage, tu appelleras" onclick="getCharacter()"/><br><br>
-    <span id="characterDesc"></span>
+    <span style="color: red;" id="characterDesc"></span>
+
 </body>
 </html>
